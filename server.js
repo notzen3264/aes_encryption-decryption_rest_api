@@ -1,5 +1,5 @@
 'use strict';
-
+require('dotenv').config();
 /**
  * Secure AES file encryption/decryption API (Koyeb-friendly, streaming)
  *
@@ -39,7 +39,7 @@ const path = require('path');
 
 const {
   PORT = '8080',
-  API_KEYS = '',
+  API_KEYS = `${process.env.API_KEY}`,
   MAX_FILE_MB = '1024',
   RATE_WINDOW_MS = `${15 * 60 * 1000}`,
   RATE_MAX = '100',
